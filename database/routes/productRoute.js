@@ -14,7 +14,7 @@ const router = express.Router();
 // GET ALL ProductS
 router.get('/' , async (req, res) => {
   try {
-    const {category} = req.params;
+    const category = req.params.category;
     console.log(category);
     const Products = await Product.find({ category});
 
