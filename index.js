@@ -32,11 +32,11 @@ connectDB(url);
 
 const startServer = async () => {
   try {
-    app.listen(3000, () => console.log("server has started on port 8080"));
+    app.listen(3000, () => console.log("server has started on port 3000"));
   } catch (err) {
     console.log(err);
   }
 };
 startServer();
 
-export default app;
+
