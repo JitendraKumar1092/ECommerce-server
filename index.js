@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 const url = process.env.MONGO_URL;
-console.log(url);
+
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 
 
-app.use("/api/v1/products", productRoute);
+app.use("/api/products/:category", productRoute);
 
 app.get("/", async (req, res) => {
   res.send("hello from the server");

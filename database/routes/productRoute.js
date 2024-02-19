@@ -10,10 +10,13 @@ const router = express.Router();
 
 
 
+
 // GET ALL ProductS
-router.route("/").get(async (req, res) => {
+router.get('/' , async (req, res) => {
   try {
-    const Products = await Product.find({});
+    const {category} = req.params;
+    console.log(category);
+    const Products = await Product.find({ category});
 
     res.status(200).json({ success: true, data: Products });
   } catch (error) {
